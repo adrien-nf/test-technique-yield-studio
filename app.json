@@ -1,17 +1,25 @@
 {
-  "expo": {
-    "scheme": "technical-test-react-native",
-    "name": "technical-test-react-native",
-    "slug": "technical-test-react-native",
-    "owner": "yieldstudio",
-    "orientation": "default",
-    "plugins": [
-      [
-        "expo-screen-orientation",
-        {
-          "initialOrientation": "ALL"
-        }
-      ]
-    ]
-  }
+	"expo": {
+		"scheme": "technical-test-react-native",
+		"name": "technical-test-react-native",
+		"slug": "technical-test-react-native",
+		"owner": "yieldstudio",
+		"orientation": "default",
+		"plugins": [
+			[
+				"expo-screen-orientation",
+				{
+					"initialOrientation": "ALL"
+				}
+			]
+		],
+		"splash": {
+			"image": "./assets/splash.png"
+		},
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/adaptive-icon.png"
+			}
+		}
+	}
 }

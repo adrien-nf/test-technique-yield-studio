@@ -10,7 +10,7 @@ export default function Home() {
 				options={{
 					headerTitle: () => <Image
 						style={{ width: 193, height: 29 }}
-						source={require('../../assets/Logo.png')}
+						source={require('../../assets/logo-header.png')}
 						alt="Logo YieldStagram"
 					/>,
 					headerTitleAlign: "center",
