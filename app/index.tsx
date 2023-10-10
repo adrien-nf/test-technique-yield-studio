@@ -1,3 +1,3 @@
-import PicturesIndex from "./pictures/index";
+import ImagesIndex from "./images/index";
 
-export default PicturesIndex;
+export default ImagesIndex;

@@ -1,12 +1,14 @@
-import { Button, ScrollView, TextInput } from "react-native";
+import { Button, ScrollView, TextInput, View } from "react-native";
 import { useForm, SubmitHandler, Controller } from "react-hook-form"
 import ImagePicker from "../../components/ImagePicker/ImagePicker";
 import tw from "../../components/tailwind";
 import { ImagePickerAsset } from "expo-image-picker";
+import { useImageStore } from "../../stores/useImageStore";
+import Preview from "../../components/ImagePicker/Preview/Preview";
 
 type Inputs = {
 	title: string,
-	picture: ImagePickerAsset
+	file: ImagePickerAsset
 }
 
 export default function Page() {
@@ -14,11 +16,18 @@ export default function Page() {
 		control,
 		handleSubmit,
 		formState: { errors },
+		reset
 	} = useForm<Inputs>()
-	const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
+
+	const addImage = useImageStore((state) => state.addImage);
+
+	const onSubmit: SubmitHandler<Inputs> = (data) => {
+		addImage(data);
+		reset();
+	}
 
 	return (
-		<ScrollView contentContainerStyle={tw`grow`}>
+		<ScrollView contentContainerStyle={tw`grow gap-4`}>
 			<Controller
 				control={control}
 				name="title"
@@ -33,9 +42,14 @@ export default function Page() {
 			/>
 			<Controller
 				control={control}
-				name="title"
+				name="file"
 				render={({ field: { onChange, value, onBlur } }) => (
-					<ImagePicker onChangeImage={value => onChange(value)} />
+					<>
+						<ImagePicker onChangeImage={value => onChange(value)} />
+						<View style={tw`grow`}>
+							<Preview image={value} />
+						</View>
+					</>
 				)}
 			/>
 			<Button title='Submit' onPress={handleSubmit(onSubmit)} />

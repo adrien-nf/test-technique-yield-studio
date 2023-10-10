@@ -19,7 +19,7 @@ export default function ImagePicker({ onChangeImage }: ImagePickerProps) {
 	}, [image])
 
 	return (
-		<View style={tw`grow gap-4`}>
+		<View style={tw` gap-4`}>
 			<PressableIcon
 				text="Appareil photo"
 				onPress={pickFromCamera}
@@ -30,7 +30,6 @@ export default function ImagePicker({ onChangeImage }: ImagePickerProps) {
 				onPress={pickFromGallery}
 				icon={<FontAwesome5.Button name="images" />}
 			/>
-			<Preview image={image} />
 		</View >
 	);
 }
