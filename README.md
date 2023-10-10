@@ -32,4 +32,3 @@ Ce test est prévue pour une durée d'environs 2-3h.
 - Jest a été setup sur le projet mais n'est pas obligatoire
 - Il n'est pas interdit d'ajouter des librairies supplémentaires sur le projet
 - L'UI de l'application n'est pas prioritaire à l'UX sur ce projet et n'est surtout par prioritaire sur la qualité du code, son organisation et sa clarté
-# test-technique-yield-studio

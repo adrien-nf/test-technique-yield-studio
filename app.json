@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "scheme": "technical-test-react-native",
+    "name": "technical-test-react-native",
+    "slug": "technical-test-react-native",
+    "owner": "yieldstudio",
+    "orientation": "default",
+    "plugins": [
+      [
+        "expo-screen-orientation",
+        {
+          "initialOrientation": "ALL"
+        }
+      ]
+    ]
+  }
+}
