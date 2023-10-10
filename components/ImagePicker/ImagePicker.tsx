@@ -1,28 +1,36 @@
-import React, { useState } from 'react';
-import { Button, Image, View } from 'react-native';
-import * as ExpoImagePicker from 'expo-image-picker';
+import React, { useEffect } from 'react';
+import { View } from 'react-native';
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import tw from '../tailwind';
+import { useImagePicker } from "../../hooks/useImagePicker";
+import Preview from './Preview/Preview';
+import PressableIcon from '../PressableIcon/PressableIcon';
+import { ImagePickerAsset } from 'expo-image-picker';
 
-export default function ImagePicker() {
-	const [image, setImage] = useState(null);
+interface ImagePickerProps {
+	onChangeImage: (image: ImagePickerAsset) => void
+}
 
-	const pickImage = async () => {
-		let result = await ExpoImagePicker.launchImageLibraryAsync({
-			mediaTypes: ExpoImagePicker.MediaTypeOptions.Images,
-			aspect: [4, 3],
-			quality: 1,
-		});
+export default function ImagePicker({ onChangeImage }: ImagePickerProps) {
+	const { image, pickFromCamera, pickFromGallery } = useImagePicker();
 
-		console.log(result);
-
-		if (!result.canceled) {
-			setImage(result.assets[0].uri);
-		}
-	};
+	useEffect(() => {
+		if (image) onChangeImage(image);
+	}, [image])
 
 	return (
-		<View>
-			<Button title="Pick an image from camera roll" onPress={pickImage} />
-			{image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
-		</View>
+		<View style={tw`grow gap-4`}>
+			<PressableIcon
+				text="Appareil photo"
+				onPress={pickFromCamera}
+				icon={<FontAwesome5.Button name="camera" />}
+			/>
+			<PressableIcon
+				text="Galerie"
+				onPress={pickFromGallery}
+				icon={<FontAwesome5.Button name="images" />}
+			/>
+			<Preview image={image} />
+		</View >
 	);
 }

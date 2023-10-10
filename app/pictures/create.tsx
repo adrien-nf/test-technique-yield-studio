@@ -1,11 +1,12 @@
-import { Button, Text, TextInput, View } from "react-native";
-import { useForm, SubmitHandler, Form, Controller } from "react-hook-form"
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Button, ScrollView, TextInput } from "react-native";
+import { useForm, SubmitHandler, Controller } from "react-hook-form"
 import ImagePicker from "../../components/ImagePicker/ImagePicker";
+import tw from "../../components/tailwind";
+import { ImagePickerAsset } from "expo-image-picker";
 
 type Inputs = {
 	title: string,
-	picture: undefined
+	picture: ImagePickerAsset
 }
 
 export default function Page() {
@@ -17,21 +18,27 @@ export default function Page() {
 	const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
 
 	return (
-		<SafeAreaView>
+		<ScrollView contentContainerStyle={tw`grow`}>
 			<Controller
 				control={control}
 				name="title"
 				render={({ field: { onChange, value, onBlur } }) => (
 					<TextInput
-						placeholder="Enter your name here"
+						placeholder="Titre"
 						value={value}
 						onBlur={onBlur}
 						onChangeText={value => onChange(value)}
 					/>
 				)}
 			/>
-			<ImagePicker />
+			<Controller
+				control={control}
+				name="title"
+				render={({ field: { onChange, value, onBlur } }) => (
+					<ImagePicker onChangeImage={value => onChange(value)} />
+				)}
+			/>
 			<Button title='Submit' onPress={handleSubmit(onSubmit)} />
-		</SafeAreaView>
+		</ScrollView>
 	)
 }

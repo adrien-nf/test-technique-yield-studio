@@ -1,11 +1,11 @@
 import { Stack, Link } from 'expo-router';
 import React from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, Text } from 'react-native';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
 export default function Home() {
 	return (
-		<View>
+		<>
 			<Stack.Screen
 				options={{
 					headerTitle: () => <Image
@@ -19,6 +19,6 @@ export default function Home() {
 			/>
 			<Text>Home Screen</Text>
 			<Link href={{ pathname: 'details', params: { name: 'Bacon' } }}>Go to Details</Link>
-		</View>
+		</>
 	);
 }
