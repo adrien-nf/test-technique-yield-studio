@@ -19,10 +19,10 @@ export default function Page() {
 		reset
 	} = useForm<Inputs>()
 
-	const addImage = useImageStore((state) => state.addImage);
+	const add = useImageStore((state) => state.add);
 
 	const onSubmit: SubmitHandler<Inputs> = (data) => {
-		addImage(data);
+		add(data);
 		reset();
 	}
 
