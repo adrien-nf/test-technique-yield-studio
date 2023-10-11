@@ -3,7 +3,6 @@ import { View } from 'react-native';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import tw from '../tailwind';
 import { useImagePicker } from "../../hooks/useImagePicker";
-import Preview from './Preview/Preview';
 import PressableIcon from '../PressableIcon/PressableIcon';
 import { ImagePickerAsset } from 'expo-image-picker';
 
@@ -19,7 +18,7 @@ export default function ImagePicker({ onChangeImage }: ImagePickerProps) {
 	}, [image])
 
 	return (
-		<View style={tw` gap-4`}>
+		<View style={tw`gap-4 flex-row`}>
 			<PressableIcon
 				text="Appareil photo"
 				onPress={pickFromCamera}

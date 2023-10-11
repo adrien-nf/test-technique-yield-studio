@@ -46,9 +46,7 @@ export default function Page() {
 				render={({ field: { onChange, value, onBlur } }) => (
 					<>
 						<ImagePicker onChangeImage={value => onChange(value)} />
-						<View style={tw`grow`}>
-							<Preview image={value} />
-						</View>
+						<Preview image={value} />
 					</>
 				)}
 			/>
