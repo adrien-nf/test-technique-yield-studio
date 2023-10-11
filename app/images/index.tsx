@@ -1,6 +1,6 @@
 import { Stack, Link } from 'expo-router';
 import React from 'react';
-import { Image, Text } from 'react-native';
+import { Image, ScrollView, Text, View } from 'react-native';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { useImageStore } from '../../stores/useImageStore';
 import Preview from '../../components/ImagePicker/Preview/Preview';
@@ -10,7 +10,7 @@ export default function Home() {
 	const images = useImageStore((state) => state.images);
 
 	return (
-		<>
+		<View>
 			<Stack.Screen
 				options={{
 					headerTitle: () => <Image
@@ -22,8 +22,7 @@ export default function Home() {
 					headerRight: () => <Link href="/images/create"><FontAwesome5 name="camera" size={24} /></Link>,
 				}}
 			/>
-			<Text>Home Screen {images.length}</Text>
 			<ImageDeck images={images}></ImageDeck>
-		</>
+		</View>
 	);
 }
