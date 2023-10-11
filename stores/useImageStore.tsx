@@ -18,6 +18,9 @@ export const useImageStore = create<ImageState>((set) => ({
 	remove: (image: Image) => set((state) => {
 		const imageIndex = state.images.findIndex(e => e.id === image.id);
 
-		return ({ images: state.images.toSpliced(imageIndex) })
+		const splicedImages = [...state.images];
+		splicedImages.splice(imageIndex);
+
+		return ({ images: splicedImages })
 	}),
 }))

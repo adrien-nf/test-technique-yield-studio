@@ -1,6 +1,6 @@
 import { Stack, Link } from 'expo-router';
 import React from 'react';
-import { Image, ScrollView, Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { useImageStore } from '../../stores/useImageStore';
 import ImageDeck from '../../components/ImageDeck/ImageDeck';
