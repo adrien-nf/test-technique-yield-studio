@@ -1,4 +1,4 @@
-import { FlatList, View } from 'react-native';
+import { View } from 'react-native';
 import { Image } from '../../types/Image';
 import PostedImage from './PostedImage/PostedImage';
 import tw from '../tailwind';
