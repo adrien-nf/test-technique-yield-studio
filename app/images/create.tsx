@@ -1,4 +1,4 @@
-import { Button, ScrollView } from "react-native";
+import { Button, ScrollView, View } from "react-native";
 import { useForm, SubmitHandler } from "react-hook-form"
 import tw from "../../components/tailwind";
 import { ImagePickerAsset } from "expo-image-picker";
@@ -27,10 +27,10 @@ export default function Page() {
 	}
 
 	return (
-		<ScrollView contentContainerStyle={tw`grow gap-4`}>
+		<View style={tw`flex grow flex-col gap-3 max-h-full basis-100`}>
 			<TextInput<FormData> label="Titre" name="title" form={form} />
 			<ImageInput<FormData> label="Image" name="file" form={form} />
 			<Button title="Valider" disabled={!form.formState.isDirty || !form.formState.isValid} onPress={form.handleSubmit(onSubmit)} />
-		</ScrollView>
+		</View>
 	)
 }

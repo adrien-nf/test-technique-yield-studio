@@ -18,7 +18,7 @@ export default function ImagePicker({ onChangeImage }: ImagePickerProps) {
 	}, [image])
 
 	return (
-		<View style={tw`gap-4 flex-row`}>
+		<View style={tw`gap-3 flex-row grow`}>
 			<PressableIcon
 				text="Appareil photo"
 				onPress={pickFromCamera}

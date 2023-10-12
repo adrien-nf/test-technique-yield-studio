@@ -7,7 +7,7 @@ export default function ImageDeck({ images }: {
 	images: Image[],
 }) {
 	return (
-		<View style={tw`flex flex-wrap justify-around gap-4 flex-row`}>
+		<View style={tw`flex flex-wrap justify-around gap-3 flex-row`}>
 			{images.map(image => <PostedImage key={image.id} image={image} />)}
 		</View>
 	)
