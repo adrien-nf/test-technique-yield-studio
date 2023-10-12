@@ -1,6 +1,6 @@
 import { Stack, Link } from 'expo-router';
-import React, { useEffect, useState } from 'react';
-import { Image, Text } from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
+import { Image } from 'react-native';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { useImageStore } from '../../stores/useImageStore';
 import ImageDeck from '../../components/ImageDeck/ImageDeck';
@@ -9,11 +9,14 @@ import Snackbar from '../../components/Snackbar/Snackbar';
 
 export default function Home() {
 	const images = useImageStore((state) => state.images);
+	const previousImageCount = useRef(images.length);
 
-	const [snackbarVisible, setSnackbarVisible] = useState(true);
+	const [snackbarVisible, setSnackbarVisible] = useState(false);
 
 	useEffect(() => {
-		setSnackbarVisible(true);
+		if (images.length > previousImageCount.current) {
+			setSnackbarVisible(true);
+		}
 	}, [images])
 
 	return (
@@ -39,7 +42,7 @@ export default function Home() {
 			<Snackbar
 				visible={snackbarVisible}
 				setVisible={setSnackbarVisible}
-				textMessage="Action effectuée!"
+				textMessage="Photo ajoutée!"
 			/>
 		</>
 	);
