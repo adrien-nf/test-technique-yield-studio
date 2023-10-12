@@ -30,15 +30,19 @@ export function useImagePicker(): ReturnType {
 
 	const pickFromSource = async (source: Source) => {
 		const permissionResponse = (await source.checkPermission());
+		console.log("Permission checked");
 
 		if (permissionResponse.granted) {
+			console.log("Permission is granted");
 			return source.launch().then(result => handleResult(result))
 		}
 
 		if (permissionResponse.canAskAgain) {
+			console.log("could ask again");
 			return source.askPermission();
 		}
 
+		console.log("Permission open settings then");
 		return Linking.openSettings();
 	}
 

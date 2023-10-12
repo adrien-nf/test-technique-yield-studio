@@ -1,25 +1,31 @@
 {
-	"expo": {
-		"scheme": "technical-test-react-native",
-		"name": "technical-test-react-native",
-		"slug": "technical-test-react-native",
-		"owner": "yieldstudio",
-		"orientation": "default",
-		"plugins": [
-			[
-				"expo-screen-orientation",
-				{
-					"initialOrientation": "ALL"
-				}
-			]
-		],
-		"splash": {
-			"image": "./assets/splash.png"
-		},
-		"android": {
-			"adaptiveIcon": {
-				"foregroundImage": "./assets/adaptive-icon.png"
-			}
-		}
-	}
+  "expo": {
+    "scheme": "technical-test-react-native",
+    "name": "technical-test-react-native",
+    "slug": "technical-test-react-native",
+    "orientation": "default",
+    "plugins": [
+      [
+        "expo-screen-orientation",
+        {
+          "initialOrientation": "ALL"
+        }
+      ]
+    ],
+    "splash": {
+      "image": "./assets/splash.png"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png"
+      },
+      "package": "com.yieldstudio.technicaltestreactnative"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "256df9b0-c30f-4412-8913-273b9c69db32"
+      }
+    },
+    "owner": "nautilusjungle"
+  }
 }

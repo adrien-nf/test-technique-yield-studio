@@ -10,7 +10,7 @@ interface PressableIconProps {
 export default function PressableIcon({ onPress, icon, text }: PressableIconProps) {
 	return (
 		<Pressable onPress={onPress} style={tw`grow basis-0 items-center justify-center py-3 bg-gray-100 border-gray-200 border rounded-lg`}>
-			{<icon.type {...icon.props} iconStyle={tw`text-gray-400 mx-0`} size={32} backgroundColor="transparent" />}
+			{<icon.type {...icon.props} style={tw`text-gray-400 my-2`} size={32} backgroundColor="transparent" />}
 			<Text style={tw`text-gray-400`}>{text}</Text>
 		</Pressable>
 	)

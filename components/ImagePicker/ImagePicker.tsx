@@ -22,12 +22,12 @@ export default function ImagePicker({ onChangeImage }: ImagePickerProps) {
 			<PressableIcon
 				text="Appareil photo"
 				onPress={pickFromCamera}
-				icon={<FontAwesome5.Button name="camera" />}
+				icon={<FontAwesome5 name="camera" />}
 			/>
 			<PressableIcon
 				text="Galerie"
 				onPress={pickFromGallery}
-				icon={<FontAwesome5.Button name="images" />}
+				icon={<FontAwesome5 name="images" />}
 			/>
 		</View >
 	);

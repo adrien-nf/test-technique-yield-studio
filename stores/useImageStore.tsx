@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { Image } from '../types/Image';
+import StorageFacade from '../facades/StorageFacade';
 
 interface ImageState {
 	images: Image[],
@@ -8,10 +9,12 @@ interface ImageState {
 }
 
 export const useImageStore = create<ImageState>((set) => ({
-	images: [],
+	images: StorageFacade.load(),
 	add: (image: Omit<Image, "id">) => set((state) => {
 		const id = Math.random().toString(36).substring(2, 10);
 		const imageWithId: Image = { ...image, id };
+
+		console.log(image)
 
 		return ({ images: [imageWithId, ...state.images] })
 	}),

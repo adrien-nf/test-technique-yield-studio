@@ -1,10 +1,10 @@
 import { Stack, Link } from 'expo-router';
 import React from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image } from 'react-native';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { useImageStore } from '../../stores/useImageStore';
 import ImageDeck from '../../components/ImageDeck/ImageDeck';
-import tw from '../../components/tailwind';
+import EmptyHereIcon from '../../components/EmptyHereIcon/EmptyHereIcon';
 
 export default function Home() {
 	const images = useImageStore((state) => state.images);
@@ -24,16 +24,9 @@ export default function Home() {
 			/>
 			{
 				images.length === 0 ? (
-					<View style={tw`flex grow justify-center items-center`}>
-						<View style={tw`flex items-center gap-4`}>
-							<FontAwesome5 name="sad-tear" size={64} style={tw`text-gray-200`} />
-							<Text style={tw`text-gray-200`}>C'est vide par ici!</Text>
-						</View>
-					</View>
+					<EmptyHereIcon />
 				) : (
-					<View>
-						<ImageDeck images={images}></ImageDeck>
-					</View>
+					<ImageDeck images={images}></ImageDeck >
 				)
 			}
 		</>
