@@ -1,5 +1,5 @@
 import { Alert, Image, Pressable, View } from "react-native";
-import { Link, Redirect, Stack, useLocalSearchParams } from "expo-router";
+import { Redirect, Stack, useLocalSearchParams } from "expo-router";
 import { useImageStore } from "../../stores/useImageStore";
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import tw from "../../components/tailwind";

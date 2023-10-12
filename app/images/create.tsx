@@ -1,4 +1,4 @@
-import { Button, ScrollView, View } from "react-native";
+import { Button, View } from "react-native";
 import { useForm, SubmitHandler } from "react-hook-form"
 import tw from "../../components/tailwind";
 import { ImagePickerAsset } from "expo-image-picker";
@@ -6,7 +6,6 @@ import { useImageStore } from "../../stores/useImageStore";
 import TextInput from "../../components/Inputs/TextInput";
 import ImageInput from "../../components/Inputs/ImageInput";
 import { useRouter } from "expo-router";
-import SnackBar from 'react-native-snackbar-component'
 
 type FormData = {
 	title: string,

@@ -6,6 +6,9 @@ interface ImageState {
 	images: Image[],
 	add: (image: Omit<Image, "id">) => void,
 	remove: (image: Image) => void,
+	deletionList: Image[],
+	toggleInDeletionList: (image: Image) => void,
+	removeFromDeletionList: () => void,
 }
 
 export const useImageStore = create<ImageState>((set) => ({
@@ -24,4 +27,21 @@ export const useImageStore = create<ImageState>((set) => ({
 
 		return ({ images: splicedImages })
 	}),
+	deletionList: [],
+	toggleInDeletionList: (image: Image) => set((state) => {
+		if (!state.deletionList.includes(image)) return ({ deletionList: [...state.deletionList, image] });
+
+		const imageIndex = state.deletionList.findIndex(e => e.id === image.id);
+
+		const splicedImages = [...state.deletionList];
+		splicedImages.splice(imageIndex, 1);
+
+		return ({ deletionList: splicedImages })
+	}),
+	removeFromDeletionList: () => set((state) => {
+		return ({
+			images: state.images.filter(image => !state.deletionList.includes(image)),
+			deletionList: [],
+		})
+	})
 }))
