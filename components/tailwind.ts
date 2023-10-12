@@ -69,6 +69,9 @@ const config = {
 				500: "#DA5353",
 				600: "#E96F6F",
 			},
+			lime: {
+				400: "#5CB85C"
+			}
 		},
 	},
 	plugins: [],

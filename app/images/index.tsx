@@ -39,7 +39,7 @@ export default function Home() {
 			<Snackbar
 				visible={snackbarVisible}
 				setVisible={setSnackbarVisible}
-				textMessage="Photo ajoutée!"
+				textMessage="Action effectuée!"
 			/>
 		</>
 	);
