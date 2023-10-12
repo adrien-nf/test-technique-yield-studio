@@ -23,7 +23,7 @@ export default function Page() {
 	const onSubmit: SubmitHandler<FormData> = (data) => {
 		add(data);
 		form.reset();
-		router.replace("/images");
+		router.back();
 	}
 
 	return (

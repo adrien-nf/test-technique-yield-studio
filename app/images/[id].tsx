@@ -1,4 +1,4 @@
-import { Alert, Image, Pressable } from "react-native";
+import { Alert, Image, Pressable, ScrollView, View } from "react-native";
 import { Link, Redirect, Stack, useLocalSearchParams } from "expo-router";
 import { useImageStore } from "../../stores/useImageStore";
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
@@ -26,14 +26,14 @@ export default function Page() {
 	}
 
 	return (
-		<>
+		<View style={tw`flex grow justify-center`}>
 			<Stack.Screen
 				options={{
 					headerTitle: image.title,
 					headerRight: () => <Pressable onPress={promptForDelete}><FontAwesome5 name="trash" style={tw`text-red-500`} size={24} /></Pressable>,
 				}}
 			/>
-			<Image resizeMode={'cover'} style={{ alignSelf: "center", width: '100%', aspectRatio: image.file.width / image.file.height }} source={{ uri: image.file.uri }} />
-		</>
+			<Image resizeMode={'cover'} style={{ alignSelf: "center", width: '100%', maxHeight: '100%', aspectRatio: image.file.width / image.file.height }} source={{ uri: image.file.uri }} />
+		</View>
 	)
 }
