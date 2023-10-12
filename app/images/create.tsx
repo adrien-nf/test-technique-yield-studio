@@ -5,6 +5,7 @@ import { ImagePickerAsset } from "expo-image-picker";
 import { useImageStore } from "../../stores/useImageStore";
 import TextInput from "../../components/Inputs/TextInput";
 import ImageInput from "../../components/Inputs/ImageInput";
+import { useRouter } from "expo-router";
 
 type FormData = {
 	title: string,
@@ -12,13 +13,16 @@ type FormData = {
 }
 
 export default function Page() {
-	const form = useForm<FormData>()
+	const form = useForm<FormData>();
+
+	const router = useRouter();
 
 	const add = useImageStore((state) => state.add);
 
 	const onSubmit: SubmitHandler<FormData> = (data) => {
 		add(data);
 		form.reset();
+		router.replace("/images");
 	}
 
 	return (

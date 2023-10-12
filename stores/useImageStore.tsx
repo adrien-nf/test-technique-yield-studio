@@ -14,8 +14,6 @@ export const useImageStore = create<ImageState>((set) => ({
 		const id = Math.random().toString(36).substring(2, 10);
 		const imageWithId: Image = { ...image, id };
 
-		console.log(image)
-
 		return ({ images: [imageWithId, ...state.images] })
 	}),
 	remove: (image: Image) => set((state) => {

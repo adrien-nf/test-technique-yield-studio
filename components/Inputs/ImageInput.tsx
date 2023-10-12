@@ -3,7 +3,6 @@ import ImagePicker from "../ImagePicker/ImagePicker";
 import Preview from "../ImagePicker/Preview/Preview";
 import { InputProps } from "./Input";
 import Error from "./Error";
-import { View } from "react-native";
 
 export default function ImageInput<FormData extends FieldValues>({ name, label, form }: InputProps<FormData>) {
 	return (
