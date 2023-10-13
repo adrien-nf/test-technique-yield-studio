@@ -16,8 +16,8 @@ Lorsque l'on appuie sur une photo, nous somme redirigé sur son écran dit "Show
 On peut également cliquer sur l'icône d'appareil photo pour rajouter une nouvelle photo.
 
 <p align="center">
-  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/ca1fb725-7199-4416-a2c3-1b2be0efd600" width="225" height="500">
-  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/11296821-4386-4fa6-901b-3758403446c2" width="225" height="500">
+  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/d92f47c6-a58a-4d2f-b32f-4846d5a2d0f2" width="225" height="500">
+  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/02853032-c11c-4cc2-a660-cf94d1d2f068" width="225" height="500">
 </p>
 
 #### Mode supression de masse
@@ -28,8 +28,8 @@ Sur la première photo, nous avons sélectionné 4 images: les images n° 2, 3, 
 La seconde photo montre ce qu'il se passe lorsqu'on appuie sur la poubelle rouge.
 
 <p align="center">
-  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/ccf86b81-6b1e-4c98-961d-810d500a99e5" width="225" height="500">
-  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/4c3ea7ee-8b1a-48f2-8144-a19de6766c16" width="225" height="500">
+  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/fa5693b5-78df-41f5-ae30-58c8cf841f84" width="225" height="500">
+  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/15dec79b-f092-4456-a70b-34ed1ed6422b" width="225" height="500">
 </p>
 
 ### Création de "post"
@@ -39,15 +39,15 @@ Deux moyens s'offrent à nous: l'appareil photo, ou la galerie photos.
 Le bouton de validation reste grisé tant qu'il n'y a pas une photo et un post.
 
 <p align="center">
-  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/20f8637d-d38f-4801-b407-0f00bf82dbee" width="225" height="500">
+  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/4ef1189a-a5e9-4b30-961d-fded9ca6161c" width="225" height="500">
 </p>
 
 #### Gestion des permissions
 L'écran demande la permission lorsque l'on tente d'ajouter une photo. Si on refuse une première fois, l'application proposera d'ouvrir les paramètres comme montré ci-après.
 
 <p align="center">
-  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/1a5efd6c-7daa-4587-a5ee-23c489694dd9" width="225" height="500">
-  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/bbe78708-5fe0-4ba8-98a3-e9e85b5bb9d6" width="225" height="500">
+  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/282b9f5d-d0c1-4557-9738-50ed1aa40a2f" width="225" height="500">
+  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/bc54533a-618f-433e-a223-67e2d88fe03f" width="225" height="500">
 </p>
 
 #### Ajout de la photo
@@ -56,15 +56,15 @@ On note qu'à l'ajout d'un titre, l'application reste fonctionnelle et rien ne s
 Sur cette photo, je venais de remporter un quiz à un meetup React & React Native. J'étais donc content, ce qui se lit à mon sourire.
 
 <p align="center">
-  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/391d4cae-3255-4d30-bb00-93304bde1bf0" width="225" height="500">
-  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/478e7ec9-a52b-464b-b1ec-4c95d3cff21b" width="225" height="500">
+  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/8a39ad34-eed9-4875-89b5-8d53edbec5b9" width="225" height="500">
+  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/2c18cb65-4041-4c02-939c-8bcb6f699b45" width="225" height="500">
 </p>
 
 #### Validation
 Une fois la photo ajoutée, l'utilisateur est renvoyé sur l'écran d'accueil et un snackbar lui précise que l'action a fonctionné.
 
 <p align="center">
-  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/10629ba0-87d2-4a1b-bda4-0f8c051886b2" width="225" height="500">
+  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/c1f2e85e-c0df-49bf-99dc-70050fb705a8" width="225" height="500">
 </p>
 
 ### Affichage d'une photo
@@ -72,18 +72,18 @@ En cliquant sur une photo, on se fait rediriger sur la page d'affichage de ladit
 En cliquant sur la poubelle rouge, il est possible de supprimer la photo. Après quoi, on est redirigé sur l'écran d'accueil.
 
 <p align="center">
-  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/88f3e134-0270-4fc3-a4d6-7d26b3fbbe55" width="225" height="500">
-  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/5f09d7f1-a3f6-428e-8a4f-b96256e058ad" width="225" height="500">
+  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/81499d9a-d295-49d3-aed2-f3836d5e07a4" width="225" height="500">
+  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/9d56fdd0-9403-4800-9ba1-fb5f1d2abee1" width="225" height="500">
 </p>
 
 ### Mode Landscape
 Bien que pas optimal pour une application de ce genre, le mode "Landscape" a été géré au mieux.
 
 <p align="center">
-  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/9d4d8b9d-ff1a-4a31-bf11-4fc29c64bd3d" width="500" height="225">
-  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/deb3984d-02d3-4529-89ba-714a997ae66a" width="500" height="225">
-  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/27725ee7-5067-4bcb-9be2-b50e048465ef" width="500" height="225">
-  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/ed4d1b0a-fb75-4824-a3a4-783648902d0d" width="500" height="225">
+  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/6fbc9b6d-82e8-4dd7-a517-4282dc5ca79b" width="500" height="225">
+  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/821f3778-db94-4b9a-829b-20c3f9f5c19a" width="500" height="225">
+  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/45945137-29d0-474e-9cfe-bd0cf0b1038d" width="500" height="225">
+  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/ba42f8f0-5f62-4a90-bf5b-ec04641c0794" width="500" height="225">
 </p>
 
 ### Sauvegarde
