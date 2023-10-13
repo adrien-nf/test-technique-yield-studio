@@ -1,4 +1,6 @@
-# technical-test-react-native
+# YieldStagram
+
+## Cahier des charges
 
 Hello et merci de prendre le temps de faire notre test technique !
 
