@@ -101,7 +101,7 @@ L'application a été réalisée avec quelques défis:
 - Un travail a été effectué sur l'UX, en tentant de la mettre au mieux en avant.
 
 ### Conclusion
-Enfin, l'application devrait rester chacun des points énoncés dans la consigne. Si vous avez des questions la concernant, n'hésitez pas à me contacter pour plus de clarté.
+Enfin, l'application devrait respecter chacun des points énoncés dans la consigne. Si vous avez des questions la concernant, n'hésitez pas à me contacter pour plus de clarté.
 
 ## Cahier des charges
 
