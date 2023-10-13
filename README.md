@@ -9,7 +9,7 @@ L'écran "Splash" s'affiche durant le chargement.
 ### Écran d'accueil
 L'écran d'accueil a plusieurs états:
 - D'abord, sans photos, il affiche un smiley triste.
-- Avec des photos, il les affiche dans une liste.
+- Avec des photos, il les affiche dans une liste de la plus récente à la plus ancienne.
 - Enfin, il est possible de supprimer les photos en masse.
 
 Lorsque l'on appuie sur une photo, nous somme redirigé sur son écran dit "Show", présenté plus bas.
@@ -98,9 +98,10 @@ L'application a été réalisée avec quelques défis:
 - J'ai souhaité respecter le principe du YAGNI, ainsi, dans une application réelle avec des perspectives d'évolution, il est possible que certains morceaux d'architecture soient modifiés. Par exemple, certains types pourraient être déplacés dans leurs propres fichiers, les interfaces de Props pourraient être découplées et exportées, voire déplacées dans leurs propres fichiers. J'ai jugé que pour un sujet de cette ampleur, aller au plus simple était mieux.
 - L'application a été testée sur téléphone Android réel, et sur émulateur Android.
 - Je n'ai pas d'iPhone, j'ai codé au mieux l'application en espérant que tout soit bon sous iOS. N'utilisant que des librairies standards, je suis confiant.
+- Un travail a été effectué sur l'UX, en tentant de la mettre au mieux en avant.
 
 ### Conclusion
-
+Enfin, l'application devrait rester chacun des points énoncés dans la consigne. Si vous avez des questions la concernant, n'hésitez pas à me contacter pour plus de clarté.
 
 ## Cahier des charges
 
