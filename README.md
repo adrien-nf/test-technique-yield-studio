@@ -97,7 +97,7 @@ L'application a été réalisée avec quelques défis:
 - La demande de permission est bien gérée dans un hook, 
 - J'ai souhaité respecter le principe du YAGNI, ainsi, dans une application réelle avec des perspectives d'évolution, il est possible que certains morceaux d'architecture soient modifiés. Par exemple, certains types pourraient être déplacés dans leurs propres fichiers, les interfaces de Props pourraient être découplées et exportées, voire déplacées dans leurs propres fichiers. J'ai jugé que pour un sujet de cette ampleur, aller au plus simple était mieux.
 - L'application a été testée sur téléphone Android réel, et sur émulateur Android.
-- Je n'ai pas d'iPhone, j'ai codé au mieux l'application en espérant que tout soit bon sous iOS. N'utilisant que des librairies standards, je suis confiant. Je mise sur le MacBook pro fourni pour travailler dans de meilleures conditions au sein de Yield Studio.
+- Je n'ai pas d'iPhone, j'ai codé au mieux l'application en espérant que tout soit bon sous iOS, j'ai tenté de n'utiliser que des librairies standards. Je mise sur le MacBook pro fourni pour travailler dans de meilleures conditions au sein de Yield Studio.
 - Un travail a été effectué sur l'UX, en tentant de la mettre au mieux en avant.
 
 ### Conclusion
