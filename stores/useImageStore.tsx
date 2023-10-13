@@ -17,7 +17,11 @@ export const useImageStore = create<ImageState>((set) => ({
 		const id = Math.random().toString(36).substring(2, 10);
 		const imageWithId: Image = { ...image, id };
 
-		return ({ images: [imageWithId, ...state.images] })
+		const newState = { images: [imageWithId, ...state.images] }
+
+		StorageFacade.save(newState.images);
+
+		return newState;
 	}),
 	remove: (image: Image) => set((state) => {
 		const imageIndex = state.images.findIndex(e => e.id === image.id);
@@ -25,7 +29,11 @@ export const useImageStore = create<ImageState>((set) => ({
 		const splicedImages = [...state.images];
 		splicedImages.splice(imageIndex, 1);
 
-		return ({ images: splicedImages })
+		const newState = { images: splicedImages }
+
+		StorageFacade.save(newState.images);
+
+		return newState;
 	}),
 	deletionList: [],
 	toggleInDeletionList: (image: Image) => set((state) => {
@@ -39,9 +47,13 @@ export const useImageStore = create<ImageState>((set) => ({
 		return ({ deletionList: splicedImages })
 	}),
 	removeFromDeletionList: () => set((state) => {
-		return ({
+		const newState = {
 			images: state.images.filter(image => !state.deletionList.includes(image)),
 			deletionList: [],
-		})
+		}
+
+		StorageFacade.save(newState.images);
+
+		return newState;
 	})
 }))

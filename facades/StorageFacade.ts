@@ -1,4 +1,4 @@
-// import { MMKV } from 'react-native-mmkv'
+import { MMKV } from 'react-native-mmkv'
 import { Image } from '../types/Image';
 
 export default class StorageFacade {
@@ -7,7 +7,7 @@ export default class StorageFacade {
 	protected static key = "images";
 
 	public static load(): Image[] {
-		return []
+		return [];
 		// const images = this.instance.getString(this.key);
 
 		// return images ? JSON.parse(images) : [];
