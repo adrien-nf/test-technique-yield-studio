@@ -1,6 +1,7 @@
 import { useState } from "react";
 import * as ExpoImagePicker from 'expo-image-picker';
 import { Linking } from "react-native";
+import { Alert } from "react-native";
 
 interface ReturnType {
 	image: ExpoImagePicker.ImagePickerAsset | undefined,
@@ -13,10 +14,13 @@ const pickerOptions = {
 	allowsEditing: true,
 }
 
+type CheckPermissionFunction = (writeOnly?: boolean | undefined) => Promise<ExpoImagePicker.PermissionResponse>;
+type AskPermissionFunction = (writeOnly?: boolean | undefined) => Promise<ExpoImagePicker.PermissionResponse>;
+
 interface Source {
-	checkPermission: (writeOnly?: boolean | undefined) => Promise<ExpoImagePicker.PermissionResponse>,
+	checkPermissions: CheckPermissionFunction[],
 	launch: () => Promise<ExpoImagePicker.ImagePickerResult>;
-	askPermission: (writeOnly?: boolean | undefined) => Promise<ExpoImagePicker.PermissionResponse>
+	askPermissions: AskPermissionFunction[];
 }
 
 export function useImagePicker(): ReturnType {
@@ -29,42 +33,64 @@ export function useImagePicker(): ReturnType {
 	}
 
 	const pickFromSource = async (source: Source) => {
-		const permissionResponse = (await source.checkPermission());
+		const permissionResponses = await Promise.all(source.checkPermissions.map(checkFunc => checkFunc()));
 
-		if (permissionResponse.granted) {
+		const isGranted = permissionResponses.every(permission => permission.granted);
+
+		if (isGranted) {
 			return source.launch().then(result => handleResult(result))
 		}
 
-		if (permissionResponse.canAskAgain) {
-			return source.askPermission();
-		}
+		source.askPermissions.forEach((askPermission, index) => {
+			const isGranted = permissionResponses[index].granted;
 
-		return Linking.openSettings();
+			if (!isGranted) {
+				const canAskAgain = permissionResponses[index].canAskAgain;
+
+				if (canAskAgain) {
+					return askPermission();
+				}
+
+				return promptForSettings();
+			}
+		})
+	}
+
+	const promptForSettings = () => {
+		Alert.alert("Paramètres", `Désirez-vous ouvrir les paramètres pour gérer les permissions ?`, [
+			{
+				text: 'Annuler',
+				style: 'cancel',
+			},
+			{
+				text: 'Confirmer', onPress: Linking.openSettings
+			},
+		]);
 	}
 
 	const pickFromCamera = async () => {
 		pickFromSource({
-			checkPermission: ExpoImagePicker.getCameraPermissionsAsync,
+			checkPermissions: [ExpoImagePicker.getCameraPermissionsAsync, ExpoImagePicker.getMediaLibraryPermissionsAsync],
 			launch: () => {
 				return ExpoImagePicker.launchCameraAsync({
 					mediaTypes: ExpoImagePicker.MediaTypeOptions.Images,
 					...pickerOptions
 				})
 			},
-			askPermission: ExpoImagePicker.requestCameraPermissionsAsync
+			askPermissions: [ExpoImagePicker.requestCameraPermissionsAsync, ExpoImagePicker.requestMediaLibraryPermissionsAsync]
 		})
 	};
 
 	const pickFromGallery = async () => {
 		pickFromSource({
-			checkPermission: ExpoImagePicker.getMediaLibraryPermissionsAsync,
+			checkPermissions: [ExpoImagePicker.getMediaLibraryPermissionsAsync],
 			launch: () => {
 				return ExpoImagePicker.launchImageLibraryAsync({
 					mediaTypes: ExpoImagePicker.MediaTypeOptions.Images,
 					...pickerOptions
 				})
 			},
-			askPermission: ExpoImagePicker.requestMediaLibraryPermissionsAsync
+			askPermissions: [ExpoImagePicker.requestMediaLibraryPermissionsAsync]
 		})
 	};
 
