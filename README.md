@@ -3,7 +3,7 @@
 ### Splash Screen
 L'écran "Splash" s'affiche durant le chargement.
 <p align="center">
-  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/cbd8d06e-9c64-4a37-95c5-2b6e7f52b2f1" width="225" height="500">
+  <img src="https://github.com/adrien-nf/test-technique-yield-studio/assets/22148893/44f9c2b2-5942-406b-90ad-bc777a0d9ec2" width="225" height="500">
 </p>
 
 ### Écran d'accueil
